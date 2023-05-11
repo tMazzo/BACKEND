@@ -32,6 +32,7 @@ public class CProyecto {
      SProyecto sProyecto;
      
      // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Proyecto>> list() {
         List<Proyecto> list = sProyecto.list();
@@ -39,6 +40,7 @@ public class CProyecto {
     }
     
     // BUSCAR EXPERIENCIA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Proyecto> getById(@PathVariable("id") int id) {
         if (!sProyecto.existsById(id)) {

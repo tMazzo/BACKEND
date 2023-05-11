@@ -32,6 +32,7 @@ public class CTitulo {
     STitulo sTitulo;
       
     // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Titulo>> list() {
         List<Titulo> list = sTitulo.list();
@@ -39,6 +40,7 @@ public class CTitulo {
     }
     
      // BUSCAR TITULO
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Titulo> getById(@PathVariable("id") int id) {
         if (!sTitulo.existsById(id)) {

@@ -33,6 +33,7 @@ public class CContacto {
     SContacto sContacto;
 
     // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Contacto>> list() {
         List<Contacto> list = sContacto.list();
@@ -40,6 +41,7 @@ public class CContacto {
     }
 
     // BUSCAR PERFIL
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Contacto> getById(@PathVariable("id") int id) {
         if (!sContacto.existsById(id)) {

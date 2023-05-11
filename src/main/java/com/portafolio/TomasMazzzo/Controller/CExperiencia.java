@@ -33,6 +33,7 @@ public class CExperiencia {
     SExperiencia sExperiencia;
 
     // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Experiencia>> list() {
         List<Experiencia> list = sExperiencia.list();
@@ -40,6 +41,7 @@ public class CExperiencia {
     }
 
     // BUSCAR EXPERIENCIA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id) {
         if (!sExperiencia.existsById(id)) {

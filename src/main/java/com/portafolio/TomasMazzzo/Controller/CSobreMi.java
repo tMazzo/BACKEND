@@ -32,6 +32,7 @@ public class CSobreMi {
     SSobreMi sSobreMi;
      
      // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<SobreMi>> list() {
         List<SobreMi> list = sSobreMi.list();
@@ -39,6 +40,7 @@ public class CSobreMi {
     }
     
     // BUSCAR PERFIL
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<SobreMi> getById(@PathVariable("id") int id) {
         if (!sSobreMi.existsById(id)) {

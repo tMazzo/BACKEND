@@ -33,6 +33,7 @@ public class CEducacion {
     SEducacion sEducacion;
 
     // CREAR LISTA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Educacion>> list() {
         List<Educacion> list = sEducacion.list();
@@ -40,6 +41,7 @@ public class CEducacion {
     }
 
     // BUSCAR EXPERIENCIA
+    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id") int id) {
         if (!sEducacion.existsById(id)) {
