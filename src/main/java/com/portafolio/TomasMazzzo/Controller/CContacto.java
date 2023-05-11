@@ -66,7 +66,8 @@ public class CContacto {
 
     // CREAR PERFIL
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoContacto dtoCont) {
+    public ResponseEntity<?> create(@RequestBody dtoContacto dtoCont, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtoCont.getTelefonoC())) {
             return new ResponseEntity(new Mensaje("El telefono es obligatorio."), HttpStatus.BAD_REQUEST);
         }

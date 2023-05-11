@@ -66,7 +66,8 @@ public class CEducacion {
     
     // CREAR EXPERIENCIA
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoEdu) {
+    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoEdu, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtoEdu.getNombreE())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }
