@@ -67,7 +67,8 @@ public class CHys3 {
     
     // CREAR EXPERIENCIA
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoHys3 dtohys) {
+    public ResponseEntity<?> create(@RequestBody dtoHys3 dtohys, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtohys.getNombreS())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }

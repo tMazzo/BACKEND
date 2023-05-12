@@ -65,7 +65,8 @@ public class CProyecto {
     
     // CREAR EXPERIENCIA
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoProyecto dtopro) {
+    public ResponseEntity<?> create(@RequestBody dtoProyecto dtopro, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtopro.getNombreP())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }

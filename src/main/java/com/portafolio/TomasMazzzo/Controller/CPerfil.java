@@ -65,7 +65,8 @@ public class CPerfil {
     
     // CREAR PERFIL
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoPerfil dtoPer) {
+    public ResponseEntity<?> create(@RequestBody dtoPerfil dtoPer, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtoPer.getNombreP())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }

@@ -65,7 +65,8 @@ public class CSobreMi {
     
      // CREAR PERFIL
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoSobreMi dtosm) {
+    public ResponseEntity<?> create(@RequestBody dtoSobreMi dtosm, HttpServletResponse response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
         if (StringUtils.isBlank(dtosm.getTextoSM())) {
             return new ResponseEntity(new Mensaje("El texto es obligatorio."), HttpStatus.BAD_REQUEST);
         }
