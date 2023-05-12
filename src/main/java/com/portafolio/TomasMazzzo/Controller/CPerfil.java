@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/perfil")
-@CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+@CrossOrigin(origins = {"https://bkd-portfolio-web.onrender.com"})
 public class CPerfil {
     @Autowired
     SPerfil sPerfil;

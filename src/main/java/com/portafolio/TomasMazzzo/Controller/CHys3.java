@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/hys3")
-@CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+@CrossOrigin(origins = {"https://bkd-portfolio-web.onrender.com"})
 public class CHys3 {
       @Autowired
       SHys3 sHys;

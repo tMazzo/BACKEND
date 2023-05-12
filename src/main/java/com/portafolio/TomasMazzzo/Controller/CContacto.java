@@ -26,14 +26,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/contacto")
-@CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+@CrossOrigin(origins = {"https://bkd-portfolio-web.onrender.com"})
 public class CContacto {
 
     @Autowired
     SContacto sContacto;
 
     // CREAR LISTA
-    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+    @CrossOrigin(origins = {"https://bkd-portfolio-web.onrender.com"})
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Contacto>> list() {
         List<Contacto> list = sContacto.list();
