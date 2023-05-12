@@ -26,13 +26,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/titulo")
-@CrossOrigin(origins = {"https://bkd-portfolio-web.onrender.com"})
+@CrossOrigin(origins = "*")
 public class CTitulo {
       @Autowired
     STitulo sTitulo;
       
     // CREAR LISTA
-    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+    @CrossOrigin(origins = "*")
     @GetMapping(value = {"/lista"})
     public ResponseEntity<List<Titulo>> list() {
         List<Titulo> list = sTitulo.list();
@@ -40,7 +40,7 @@ public class CTitulo {
     }
     
      // BUSCAR TITULO
-    @CrossOrigin(origins = "https://bkd-portfolio-web.onrender.com")
+    @CrossOrigin(origins = "*")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Titulo> getById(@PathVariable("id") int id) {
         if (!sTitulo.existsById(id)) {
