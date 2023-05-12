@@ -19,6 +19,7 @@ com\portafolio\TomasMazzzo\Controller\CProyecto.class
 com\portafolio\TomasMazzzo\Entity\SobreMi.class
 com\portafolio\TomasMazzzo\Security\Service\RolService.class
 com\portafolio\TomasMazzzo\Repository\RExperiencia.class
+com\portafolio\TomasMazzzo\TomasMazzzoApplication$WebMvcConfigurerImpl.class
 com\portafolio\TomasMazzzo\Entity\Perfil.class
 com\portafolio\TomasMazzzo\Security\jwt\JwtTokenFilter.class
 com\portafolio\TomasMazzzo\Dto\dtoSobreMi.class
